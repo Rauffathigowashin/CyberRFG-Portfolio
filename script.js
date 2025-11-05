@@ -1,13 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // 1. YAZI ANİMASYONU (TYPING EFFECT)
     const typingEffectElement = document.getElementById('typing-effect');
     if (typingEffectElement) {
         const words = ["Cybersecurity Enthusiast", "Python Developer"];
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-
         function type() {
             const currentWord = words[wordIndex];
             const typeSpeed = isDeleting ? 75 : 150;
@@ -31,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         type();
     }
 
-    // 2. SCROLL İLE ANİMASYON TETİKLEYİCİ (PROJECT CARDS)
     const animatedElements = document.querySelectorAll('.project-card');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -46,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    // 3. MATRIX ARKA PLAN ANİMASYONU
     const canvas = document.getElementById('matrix-background');
     if (canvas) {
         const ctx = canvas.getContext('2d');
@@ -86,9 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 drops[i]++;
             }
         }
-
+        
         setInterval(draw, 40);
-
         window.addEventListener('resize', () => {
             setCanvasSize();
             columns = Math.ceil(canvas.width / fontSize);
@@ -99,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 4. DİNAMİK YIL İÇİN FOOTER GÜNCELLEMESİ
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
